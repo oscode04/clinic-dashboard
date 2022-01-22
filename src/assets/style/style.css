@@ -1,0 +1,70 @@
+.base {
+    margin: auto;
+    margin-top: 30px;
+    display: flex;
+    padding-left: 20px;
+    padding-top: 90px;
+    border-radius: 100px; 
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    margin-top: -20px;
+}
+
+.title-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+    margin-top: -15px;
+}
+
+.add {
+    background-color: #F9FAFD;
+    box-shadow: 2px 4px 6px 0.5px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+
+.profile {
+    margin-top: 30px;
+}
+
+.card1 h2 {
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.record {
+    height: 35px;
+    width: 99px;
+    background-color: red;
+}
+
+.card2 {
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.btn {
+    margin-top: -25px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.simpan-btn {
+    margin-left: 20px;
+}
+
+.simpan-btn p {
+    margin-top: 15px;
+}
+
+.batal-btn p {
+    margin-top: 15px;
+}
