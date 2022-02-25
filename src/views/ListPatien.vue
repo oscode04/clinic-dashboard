@@ -15,8 +15,8 @@
                     <!-- <button :class="{add:menu.kondisi}" @click="toggle(menu)">Tambah Pasien2</button> -->
                     <a href="../#" style="text-decoration:none"><v-btn class="mr-2" plain>Tambah Pasien</v-btn></a>
                     <a href="../addpatien" style="text-decoration:none"><v-btn class="mr-2" plain>Daftar</v-btn></a>
-                    <a href="../findpatien" style="text-decoration:none"><v-btn class="mr-2">Cari Pasien</v-btn></a>
-                    <a href="../listpatien" style="text-decoration:none"><v-btn class="mr-2" plain>Antrian</v-btn></a>
+                    <a href="../findpatien" style="text-decoration:none"><v-btn class="mr-2" plain>Cari Pasien</v-btn></a>
+                    <a href="../listpatien" style="text-decoration:none"><v-btn class="mr-2">Antrian</v-btn></a>
                     <a href="../checkout" style="text-decoration:none"><v-btn plain>Chekout Obat</v-btn></a>
                   </v-container>
                   <!-- end menu -->
@@ -30,10 +30,31 @@
                       ref="form"
                       @submit.prevent="submit">
                         <v-container>
-
+                            <v-simple-table>
+                                <template v-slot:default>
+                                <thead>
+                                    <tr>
+                                    <th class="text-left">
+                                        Name
+                                    </th>
+                                    <th class="text-left">
+                                        Calories
+                                    </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr
+                                    v-for="item in desserts"
+                                    :key="item.name"
+                                    >
+                                    <td>{{ item.name }}</td>
+                                    <td>{{ item.calories }}</td>
+                                    </tr>
+                                </tbody>
+                                </template>
+                            </v-simple-table>
                         </v-container>
                       </v-form>
-
                     </v-card>   
                 </v-col>
                 <!-- end conten -->
@@ -63,104 +84,40 @@
   </v-container>
 </template>
 <script>
-export default {
-  data(){
-    const defaultForm = Object.freeze({
-      norecord: null,
-      nama : '',
-      rt : null,
-      rw : null,
-      alamat : '',
-      desa : '',
-      kecamatan : '',
-      kabkota : '',
-      jk : '',
-      telpon : null ,
-      nobpjs : '',
-      jenispasien : ''
-    })
-    
-    return {
-      form: Object.assign({}, defaultForm),
-        rules: {
-          requared : [
-            val => (val || '').length > 0 || 'Wajib di isi'
-          ],
-          number: value => {
-            const pattern = /^[0-9]+$/
-            return pattern.test(value) || 'harus angka'
+  export default {
+    data () {
+      return {
+        desserts: [
+          {
+            name: 'Frozen Yogurt',
+            calories: 159,
           },
-          maks: [
-            value => value.length == 2 || 'harus 2 angka'
-          ],
-          // nobpjs: [val => (val || '').length > 0 || 'Wajib di isi']
-        },
-        defaultForm,
-    }
-    
-  },
-
-  computed: {
-    formIsValid () {
-      return (
-        this.form.norecord &&
-        this.form.nama &&
-        this.form.rt &&
-        this.form.rw &&
-        this.form.alamat &&
-        this.form.desa &&
-        this.form.kecamatan &&
-        this.form.kabkota &&
-        this.form.jk &&
-        this.form.telpon &&
-        this.form.jenispasien 
-      )
+          {
+            name: 'Ice cream sandwich',
+            calories: 237,
+          },
+          {
+            name: 'Eclair',
+            calories: 262,
+          },
+          {
+            name: 'Cupcake',
+            calories: 305,
+          },
+          {
+            name: 'Gingerbread',
+            calories: 356,
+          },
+          {
+            name: 'Jelly bean',
+            calories: 375,
+          },
+          {
+            name: 'Lollipop',
+            calories: 392,
+          }
+        ],
+      }
     },
-
-    bpjsIsValid () {
-      return (
-        this.form.jenispasien == 'bpjs'
-      )
-    }
-  },
-
-  // watch : {
-  //   name () {
-  //     this.erroMessage = ''
-  //   }
-  // },
-
-  methods: {
-      resetForm () {
-        this.form = Object.assign({}, this.defaultForm)
-        this.$refs.form.reset()
-      },
-      submit () {
-        console.log(this.form)
-        this.resetForm()
-      },
-    },
-};
-
+  }
 </script>
-
-<style>
-.add {
-  background-color: red;
-  color: white;
-  border-radius: 7px;
-  margin-right: 10px;
-  padding: 5px 10px;
-}
-
-.kosong {
-  color: black;
-  margin-right: 10px;
-  padding: 5px 10px;
-}
-
-.cmargin {
-  margin-left: -15px;
-  margin-right: 15px;
-}
-</style>

@@ -13,12 +13,11 @@
                   <v-container class="d-flex justify-start mb-n5 mt-5 ml-n7">
                     <!-- <button v-for="menu in menus" :key="menu.id" :class="{add:menu.kondisi, kosong:menu.kondisi2}" @click="toggle(menu)">{{menu.label}}</button> -->
                     <!-- <button :class="{add:menu.kondisi}" @click="toggle(menu)">Tambah Pasien2</button> -->
-                    <a href="../#"><v-btn class="mr-2">Tambah Pasien</v-btn></a>
-                    <a href="../findpatien"><v-btn class="mr-2" plain>Daftar</v-btn></a>
-                    
-                    <v-btn class="mr-2" plain>Cari Pasien</v-btn>
-                    <v-btn class="mr-2" plain>Antrian</v-btn>
-                    <v-btn plain>Chekout Obat</v-btn>
+                    <a href="../#" style="text-decoration:none"><v-btn class="mr-2 tambah">Tambah Pasien</v-btn></a>
+                    <a href="../addpatien" style="text-decoration:none"><v-btn class="mr-2" plain>Daftar</v-btn></a>
+                    <a href="../findpatien" style="text-decoration:none"><v-btn class="mr-2" plain>Cari Pasien</v-btn></a>
+                    <a href="../listpatien" style="text-decoration:none"><v-btn class="mr-2" plain>Antrian</v-btn></a>
+                    <a href="../checkout" style="text-decoration:none"><v-btn plain>Chekout Obat</v-btn></a>
                   </v-container>
                   <!-- end menu -->
                 </v-col> 

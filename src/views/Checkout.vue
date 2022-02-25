@@ -15,9 +15,9 @@
                     <!-- <button :class="{add:menu.kondisi}" @click="toggle(menu)">Tambah Pasien2</button> -->
                     <a href="../#" style="text-decoration:none"><v-btn class="mr-2" plain>Tambah Pasien</v-btn></a>
                     <a href="../addpatien" style="text-decoration:none"><v-btn class="mr-2" plain>Daftar</v-btn></a>
-                    <a href="../findpatien" style="text-decoration:none"><v-btn class="mr-2">Cari Pasien</v-btn></a>
+                    <a href="../findpatien" style="text-decoration:none"><v-btn class="mr-2" plain>Cari Pasien</v-btn></a>
                     <a href="../listpatien" style="text-decoration:none"><v-btn class="mr-2" plain>Antrian</v-btn></a>
-                    <a href="../checkout" style="text-decoration:none"><v-btn plain>Chekout Obat</v-btn></a>
+                    <a href="../checkout" style="text-decoration:none"><v-btn>Chekout Obat</v-btn></a>
                   </v-container>
                   <!-- end menu -->
                 </v-col> 
